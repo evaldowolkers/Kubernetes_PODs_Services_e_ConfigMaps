@@ -1,0 +1,48 @@
+1) 
+kubectl para se comunicar com a API;
+
+2)
+Criando um pod do nginx
+kubectl run nginx-pod --image=nginx:latest
+
+3)
+Erro ao iniciar kybernetes no docker
+Configure proxy (por exemplo, colocando
+http://10.0.0.1:8889 e https://10.0.0.1:8889),
+depois remova o proxy. Em seguida irá iniciar o kubernetes.
+
+4) Comandos
+Criar um pod de forma interativa:
+kubectl run nginx-pod --image=nginx:latest
+Ver os pods:
+kubectl get pods
+Descrever:
+kubectl describe pod nginx-pod
+
+5)
+* Podemos criar pods de forma declarativa com arquivos yaml.
+
+6) Comando para criar o pod com base em um arquivo.
+kubectl apply -f .\primeiro-pod.yaml
+
+7) Remover um pod
+kubectl delete pod nome
+kubectl delete -f arquivo.yaml
+
+8) Ver o IP:
+kubectl describe pod nome-pod
+
+9) acessar o pode de forma interativa
+kubectl exec -it portal-noticias -- bash
+
+10) SVC ClusterIP
+Comunicação entre diferentes pods dentro de um mesmo cluster.
+
+11) SVC NodePort
+Abre comunicação para o mundo externo, também funciona como ClusterIP.
+
+12) SVC LoadBalancer
+Abre comunicação para o mundo externo usando o load balancer do provedor.
+
+13) Ver os serviços
+kubectl get svc
